@@ -27,7 +27,10 @@ Plugin 'gmarik/Vundle.vim'
 " vundle plugins
 "-------------------------------------------------------------------------------
 
+" solarized colours
 Plugin 'altercation/vim-colors-solarized'
+" fish syntax highlighting
+Plugin 'dag/vim-fish'
 
 "-------------------------------------------------------------------------------
 " vundle finalise
