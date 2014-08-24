@@ -1,0 +1,97 @@
+"-------------------------------------------------------------------------------
+" required
+"-------------------------------------------------------------------------------
+
+" Vim needs a POSIX-Compliant shell. Fish is not.
+if $SHELL =~ 'bin/fish'
+    set shell=/bin/sh
+endif
+
+"-------------------------------------------------------------------------------
+" vundle init
+"-------------------------------------------------------------------------------
+
+set nocompatible " be iMproved, required
+filetype off " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+"-------------------------------------------------------------------------------
+" vundle plugins
+"-------------------------------------------------------------------------------
+
+Plugin 'altercation/vim-colors-solarized'
+
+"-------------------------------------------------------------------------------
+" vundle finalise
+"-------------------------------------------------------------------------------
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"-------------------------------------------------------------------------------
+" interface
+"-------------------------------------------------------------------------------
+
+set number		" show the line number
+syntax enable		" turn on syntax highlighting
+set background=dark
+colorscheme solarized
+
+set mouse=a                 " automatically enable mouse usage
+set mousehide               " hide the mouse cursor while typing
+
+set backspace=indent,eol,start
+
+"-------------------------------------------------------------------------------
+" text
+"-------------------------------------------------------------------------------
+
+set expandtab     " use spaces instead of tabs
+set smarttab		  " be smart when tabbing
+set shiftwidth=2	" 1 tab = 2 spaces
+set tabstop=2
+
+set wildmenu                    " show list instead of just completing
+set wildmode=list:longest,full  " command <Tab> completion, list matches,
+                                " then longest common part, then all.
+
+set ai			" auto indent
+set si			" smart indent
+set wrap		" wrap lines
+
+" Use l to toggle display of whitespace
+nmap l :set list!
+" And set some nice chars to do it with
+set listchars=tab:»\ ,eol:¬
+
+"-------------------------------------------------------------------------------
+" movement
+"-------------------------------------------------------------------------------
+
+set nostartofline	" keep cursor in same column for long range movement
+
+"-------------------------------------------------------------------------------
+" searching
+"-------------------------------------------------------------------------------
+
+set incsearch		" highlight pattern matches in input
+set ignorecase	" ignore case when searching
+set smartcase		" ignore the ignorecase when the search pattern
+                " contains an upper case
+
+"-------------------------------------------------------------------------------
+" other
+"-------------------------------------------------------------------------------
+
+" disable annoying beeping
+set noerrorbells
+set vb t_vb=
