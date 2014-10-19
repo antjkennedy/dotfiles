@@ -35,6 +35,8 @@ Plugin 'vim-scripts/Gundo'
 Plugin 'tpope/vim-fugitive'
 " file browser
 Plugin 'scrooloose/nerdtree'
+" syntax checking 
+Plugin 'scrooloose/syntastic'
 
 "-------------------------------------------------------------------------------
 " vundle finalise
