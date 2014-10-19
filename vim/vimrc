@@ -37,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 " syntax checking 
 Plugin 'scrooloose/syntastic'
+" indent checking
+Plugin 'nathanaelkane/vim-indent-guides'
 
 "-------------------------------------------------------------------------------
 " vundle finalise
@@ -54,6 +56,26 @@ filetype plugin indent on    " required
 map <C-n> :NERDTreeToggle<CR>
 " close vim if only nerd tree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"-------------------------------------------------------------------------------
+" syntastic
+"-------------------------------------------------------------------------------
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+
+let g:syntastic_javascript_checkers = ['jshint']
+
+"-------------------------------------------------------------------------------
+" vim indent guides
+"-------------------------------------------------------------------------------
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 "-------------------------------------------------------------------------------
 " interface
@@ -77,6 +99,7 @@ set expandtab     " use spaces instead of tabs
 set smarttab		  " be smart when tabbing
 set shiftwidth=2	" 1 tab = 2 spaces
 set tabstop=2
+set list
 
 set wildmenu                    " show list instead of just completing
 set wildmode=list:longest,full  " command <Tab> completion, list matches,
@@ -87,7 +110,7 @@ set si			" smart indent
 set wrap		" wrap lines
 
 " Use l to toggle display of whitespace
-nmap l :set list!
+nmap l :set list!<CR>
 " And set some nice chars to do it with
 set listchars=tab:»\ ,eol:¬
 
