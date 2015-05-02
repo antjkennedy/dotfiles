@@ -2,3 +2,4 @@ fish_history
 fishd.*
 fish/generated_completions
 vim/bundle
+vim/.netrwhist
