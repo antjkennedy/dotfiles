@@ -38,8 +38,11 @@ Plugin 'scrooloose/nerdtree'
 " syntax checking 
 Plugin 'scrooloose/syntastic'
 " indent checking
-Plugin 'nathanaelkane/vim-indent-guides'
-
+"Plugin 'nathanaelkane/vim-indent-guides'
+" clojure syntax highlighting
+Plugin 'guns/vim-clojure-static'
+" fireplace repl
+Plugin 'tpope/vim-fireplace'
 "-------------------------------------------------------------------------------
 " vundle finalise
 "-------------------------------------------------------------------------------
